@@ -24,6 +24,8 @@ namespace Application.Activities
                 _context = context;
             }
 
+
+            //可以使用cancellationToken去获得这个请求是否继续或取消当request需要很长的处理时间时
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
                 _context.Activities.Add(request.Activity);

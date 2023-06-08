@@ -62,6 +62,7 @@ namespace API.Controllers
         //Delete the activities
         [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(Guid id)
+        //该操作在完成时会产生一个IActionResult类型的结果
         {
             await Mediator.Send(new Delete.Command { Id = id });
             //Ok()方法在 ASP.NET Core 中生成一个 ActionResult 对象，该对象表示 HTTP 200 OK 响应状态代码，这通常表示请求已成功处理。
